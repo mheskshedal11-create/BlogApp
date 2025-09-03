@@ -1,0 +1,163 @@
+:root {
+  --primary-color: rgb(67, 67, 226);
+  --hover-color: #e0e0e0;
+  --btn-hover-bg: rgb(178, 137, 137);
+  --text-color: #333;
+}
+/* ===============for Nabar===========================  */
+/* Base Navbar Styles */
+.navbar {
+  font-size: 15px;
+  padding: 20px 7%;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo a {
+  font-size: 28px;
+  font-weight: bolder;
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.logo span {
+  color: var(--primary-color);
+}
+
+.nav-links ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links .active {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* Desktop Auth Buttons */
+.login-signup {
+  display: flex;
+  gap: 10px;
+}
+
+.login-signup .btn {
+  font-size: 15px;
+  font-weight: bold;
+  padding: 7px 15px;
+  border: 1px solid var(--primary-color);
+  background-color: transparent;
+  color: var(--primary-color);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hamburger Icon */
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.menu-icon .bar {
+  height: 3px;
+  width: 25px;
+  background-color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    background-color: #fff;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    padding: 20px;
+    text-align: center;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-links ul li {
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 7px 15px;
+    border: 1px solid var(--primary-color);
+    background-color: transparent;
+    color: var(--primary-color);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .login-signup {
+    display: none;
+  }
+
+  .mobile-auth-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .mobile-auth-buttons .btn {
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 7px 15px;
+    border: 1px solid var(--primary-color);
+    background-color: transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+}
+
+/* ================outlet========================================= */
+.outlet {
+  padding: 10px 7%;
+}
