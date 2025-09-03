@@ -1,5 +1,10 @@
-import express from 'express'
-import { signup } from '../controllers/user.controller.js'
-export const userRouter = express.Router()
+import express from 'express';
+import { signup, login } from '../controllers/user.controller.js';
+import { upload } from '../utils/cloudinary.js';
+import { authMiddleware } from '../utils/jwt.js';
 
-userRouter.post('/register', signup)
+export const userRouter = express.Router();
+
+userRouter.post('/register', upload.single('profileImage'), signup);
+userRouter.post('/login', login);
+// userRouter.get('/profile', authMiddleware, getProfile);
