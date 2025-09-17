@@ -5,6 +5,7 @@ import { userRouter } from './router/user.router.js';
 import cors from 'cors';
 import morgan from 'morgan';
 import helmet from 'helmet';
+import postRouter from './router/post.router.js';
 
 dotenv.config({ encoding: 'utf8' });
 dbConfig();
@@ -21,6 +22,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use('/api/user', userRouter);
+app.use('/api/post', postRouter)
 
 // Global error handler
 app.use((err, req, res, next) => {
